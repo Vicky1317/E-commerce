@@ -1,0 +1,28 @@
+<input type="text" onkeyup="check(event)">
+<div>
+    <h1>One</h1>
+    <h1>Two</h1>
+    <h1>Three</h1>
+    <h1>Four</h1>
+    <h1>Five</h1>
+</div>
+<script>
+    var enteredtext = ""
+    var container = document.querySelector("div")
+    var element = document.querySelectorAll("h1")
+    console.log(element)
+    function check(event) {
+
+        enteredtext = event.target.value.toUpperCase()
+
+        for (i = 0; i < element.length; i++) {
+            if (element[i].textContent.toUpperCase().indexOf(enteredtext) < 0) {
+                element[i].style.display = "none"
+            }
+            else{
+                element[i].style.display = "block"
+            }
+        }
+
+    }
+</script>
